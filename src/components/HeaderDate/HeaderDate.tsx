@@ -8,23 +8,15 @@ const HeaderDate = () => {
   const { day } = useDayStore();
   const [showForm, setShowForm] = useState(false);
 
-  const handleShowForm = () => {
-    setShowForm(true);
-  };
-
-  const handleCloseForm = () => {
-    setShowForm(false);
-  };
-
   return (
     <div className="container_header_date">
       <h1 className="display_day">{day}</h1>
-      <button className="show_form_button" onClick={handleShowForm}>
+      <button className="show_form_button" onClick={() => setShowForm(true)}>
         +
       </button>
       <Modal
         open={showForm}
-        onClose={handleCloseForm}
+        onClose={() => setShowForm(false)}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
         style={{
