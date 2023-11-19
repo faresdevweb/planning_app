@@ -1,0 +1,13 @@
+.main_container{
+  width: 100%;
+  color: black;
+}
+
+
+@media (min-width: 768px) {
+  .main_container{
+    width: 60%;
+    color: black;
+    margin: 0 auto;
+  }
+}
