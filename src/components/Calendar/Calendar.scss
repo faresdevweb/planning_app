@@ -54,10 +54,15 @@
   background-color: white;
 }
 
-@media (min-width: 1200px){
+@media (min-width: 968px){
 
   .sub_container{
     height: 140vh;
     padding: 50px;
+  }
+
+  .dropdown  {
+    top: 120px;
+    right: 50px;
   }
 }
