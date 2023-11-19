@@ -1,4 +1,4 @@
-import "./DailySchedule.scss";
+import "./Events.scss";
 import { useTaskStore } from "../../store/task";
 import { RiChatDeleteFill } from "react-icons/ri";
 import { hexToRGBA } from "../../utils/hexToRGBA";
