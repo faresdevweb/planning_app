@@ -34,6 +34,11 @@ export const useSubmitForm = (
       color: color.hex,
     };
 
+    if (!startTimeString || !endTimeString) {
+      setError("Time range must be specified.");
+      return;
+    }
+
     try {
       addTask(task);
       setShowForm(false);
