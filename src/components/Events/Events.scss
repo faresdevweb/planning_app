@@ -1,0 +1,71 @@
+.daily_schedule_container{
+  display: flex;
+}
+
+// Supposons que vous n'avez pas de gap
+.hour_column {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  text-align: center;
+  color: #a4b0c3;
+}
+
+.hours, .task {
+  box-sizing: border-box;
+}
+
+.hours {
+  height: 48px;
+}
+
+.task_display_container {
+  position: relative;
+  height: calc(11 * 50px);
+  flex-grow: 1;
+}
+
+.task {
+  position: absolute;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.7;
+  color: black;
+}
+
+.task .delete-icon {
+  display: none;
+}
+
+.task:hover .delete-icon {
+  display: block;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all;
+}
+
+
+.text_container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  color: #243d6f;
+  font-weight: 500;
+}
+
+.first_text{
+  line-height: 34px;
+}
+
+.first_text::first-letter{
+  text-transform: uppercase;
+}
+
+.second_text{
+  padding-left: 50px;
+  line-height: 34px;
+}
