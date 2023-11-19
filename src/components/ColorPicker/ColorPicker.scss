@@ -1,0 +1,37 @@
+.color_picker_container{
+  position: relative;
+}
+.box{
+  width: 27px;
+  height: 27px;
+  background-color: black;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.color_picker {
+  position: absolute;
+  top: -179px;
+  left: -211px;
+  z-index: 15;
+}
+
+@media (min-width: 768px) {
+  .color_picker_container{
+    padding: 0;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: baseline;
+  }
+
+  .color_picker {
+    position: absolute;
+    top: -217px;
+    left: -92px;
+    z-index: 15;
+  }
+  
+  .box{
+    margin: 0;
+  }
+}
