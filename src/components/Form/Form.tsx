@@ -1,81 +1,27 @@
 import { Controller, useForm } from "react-hook-form";
 import { ColorResult } from "@uiw/react-color";
-import { Task, useTaskStore } from "../../store/task";
-import { toLocalISOTimeString } from "../../utils/toLocalISOString";
 import "./Form.scss";
-import { useEffect, useState } from "react";
 import DatePicker from "../DatePicker/DatePicker";
 import TimePicker from "../TimePicker/TimePicker";
 import ColorPicker from "../ColorPicker/ColorPicker";
 import { CiCalendar } from "react-icons/ci";
 import { CiClock2 } from "react-icons/ci";
-
-interface FormData {
-  title: string;
-  description: string;
-  date1: Date | null;
-  date2: Date | null;
-  time1: Date;
-  time2: Date;
-  color: ColorResult;
-}
-
+import { FormData } from "../../interfaces/formData.interface";
+import { useSubmitForm } from "../../hooks/useSubmitForm";
 interface FormProps {
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Form: React.FC<FormProps> = ({ setShowForm }) => {
-  const { addTask } = useTaskStore();
-  const { control, handleSubmit, register, reset, setValue } =
-    useForm<FormData>({
-      defaultValues: {
-        date1: null,
-        date2: null,
-      },
-    });
-  const [error, setError] = useState<string | null>(null);
-  const [backgroundColor, setBackgroundColor] = useState<string>("#6200ee");
+  const { control, handleSubmit, register, setValue } = useForm<FormData>({
+    defaultValues: {
+      date1: null,
+      date2: null,
+    },
+  });
 
-  const onSubmit = (data: FormData) => {
-    const { title, description, date1, date2, time1, time2, color } = data;
-    console.log(date1, date2);
-    console.log(time1, time2);
-
-    const startTimeString = toLocalISOTimeString(time1);
-    const endTimeString = toLocalISOTimeString(time2);
-    console.log(startTimeString, endTimeString);
-
-    const task: Task = {
-      id: Date.now(),
-      title,
-      description,
-      dates: [date1 ? date1.toString() : "", date2 ? date2.toString() : ""],
-      hours: [startTimeString, endTimeString],
-      color: color.hex,
-    };
-
-    try {
-      addTask(task);
-      setShowForm(false);
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError("An unknown error occurred");
-      }
-    }
-    reset();
-  };
-
-  useEffect(() => {
-    if (error) {
-      const timer = setTimeout(() => {
-        setError(null);
-      }, 3000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [error]);
+  const { onSubmit, error, backgroundColor, setBackgroundColor } =
+    useSubmitForm(setShowForm);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form_component">
