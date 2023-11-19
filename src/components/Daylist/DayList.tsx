@@ -3,6 +3,7 @@ import { useTaskStore } from "../../store/task";
 import { useDayStore } from "../../store/day.ts";
 import "./DayList.scss";
 import { useSelectDay } from "../../hooks/useSelectDay";
+import { useShowDay } from "../../hooks/useShowDay.ts";
 
 interface DayListProps {
   generateDays: () => { year: number; month: number; day: number }[];
@@ -14,16 +15,7 @@ const DayList: React.FC<DayListProps> = ({ generateDays }) => {
   const [clicked, setClicked] = useState<number | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const taskStore = useTaskStore();
-
-  const adjustDayIndex = (dayIndex: number) => {
-    return dayIndex === 0 ? 6 : dayIndex - 1;
-  };
-
-  const firstDayOfWeek = adjustDayIndex(
-    new Date(daysArray[0].year, daysArray[0].month - 1, 1).getDay()
-  );
-
-  const emptyDays = Array(firstDayOfWeek).fill(null);
+  const { emptyDays } = useShowDay(daysArray);
 
   const { handleClickDay } = useSelectDay(
     setDay,
