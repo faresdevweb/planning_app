@@ -36,6 +36,9 @@ Une application de gestion de planning interactive développée avec React, SCSS
 - useCalendar: Gère la logique du calendrier
 - useCloseModal: Gère la fermeture des modaux
 - useSelectDay: Gère la sélection des jours dans le calendrier
+- useShowEvents: Gère l'affichage des événements
+- useShowDay: Gère l'affichage des jours dans le calendrier
+- useSubmitForm: Gère la soumission du formulaire
 
 ## Utilitaires
 
