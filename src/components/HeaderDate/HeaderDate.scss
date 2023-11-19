@@ -1,0 +1,37 @@
+.container_header_date{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding-left: 22px;
+  padding-right: 29px;
+  margin-bottom: 25px;
+}
+
+.display_day{
+  font-size: 36px;
+  font-weight: 500;
+  font-size: Montserrat;
+  color: #243d6f;
+  padding-left: 10px;
+}
+
+.show_form_button{
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  background-color: #3c82f9;
+  color: white;
+  font: bold;
+  border: none;
+
+  &:hover{
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
