@@ -4,13 +4,13 @@ export const useCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [dateDropdown, setDateDropdown] = useState(false);
 
-  const subtractMonth = () => {
+  const prevMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1)
     );
   };
 
-  const addMonth = () => {
+  const nextMounth = () => {
     setCurrentDate(
       new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1)
     );
@@ -43,8 +43,8 @@ export const useCalendar = () => {
 
   return {
     currentDate,
-    subtractMonth,
-    addMonth,
+    prevMounth,
+    nextMounth,
     handleDateChange,
     title,
     dateDropdown,

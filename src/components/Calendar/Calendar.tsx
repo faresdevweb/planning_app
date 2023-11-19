@@ -8,8 +8,8 @@ import { useCalendar } from "../../hooks/useCalendar";
 const Calendar = () => {
   const {
     title,
-    subtractMonth,
-    addMonth,
+    prevMounth,
+    nextMounth,
     handleDateChange,
     dateDropdown,
     setDateDropdown,
@@ -21,11 +21,11 @@ const Calendar = () => {
     <div className="container_calendar">
       <div className="sub_container">
         <div className="header">
-          <IoIosArrowBack className="arrow_back" onClick={subtractMonth} />
+          <IoIosArrowBack className="arrow_back" onClick={prevMounth} />
           <p className="title" onClick={() => setDateDropdown(!dateDropdown)}>
             {title}
           </p>
-          <IoIosArrowForward className="arrow_forward" onClick={addMonth} />
+          <IoIosArrowForward className="arrow_forward" onClick={nextMounth} />
           <div>
             {dateDropdown && (
               <div className="dropdown">
