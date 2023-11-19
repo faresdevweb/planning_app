@@ -1,0 +1,63 @@
+.container_calendar{
+  background-color: #5C5F6C;
+}
+
+
+.sub_container{
+  background-color: #5C5F6C;
+  color: white;
+  padding: 1rem;
+  width: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 2px solid #71747F;
+}
+
+.arrow_back {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.arrow_forward {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.title{
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown  {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  padding: 1rem;
+  background-color: white;
+  z-index: 10;
+}
+
+.date_picker{
+  background-color: white;
+}
+
+@media (min-width: 1200px){
+
+  .sub_container{
+    height: 140vh;
+    padding: 50px;
+  }
+}

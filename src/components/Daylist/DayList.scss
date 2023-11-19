@@ -1,0 +1,61 @@
+.container_daylist {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.week_day {
+  text-align: center;
+  margin: 0 auto;
+  color: #BEBFC4;
+}
+
+.day {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  width: 100%;
+  gap: 19px;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+.day_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30px; 
+  height: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+
+  &.clicked {
+    background-color: #3c82f9;
+  }
+}
+
+.grid_day_container{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  
+  .day {
+    gap: 20px;
+  }
+  
+}
