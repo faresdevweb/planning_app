@@ -17,6 +17,7 @@ Une application de gestion de planning interactive développée avec React, SCSS
 - Zustand
 - SCSS
 - TypeScript
+- Material UI
 - Vite
 
 ## Composants
