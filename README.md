@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+# Planning App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Une application de gestion de planning interactive développée avec React, SCSS et Zustand, permettant de créer des events dans un calendrier, les supprimer et les visualiser.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fonctionnalités
 
-## Expanding the ESLint configuration
+- Calendrier interactif pour la sélection et la visualisation des dates
+- Gestion d'événements avec un formulaire détaillé
+- Choix de couleurs pour les tâches
+- Affichage et gestion des tâches sur le calendrier
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- Zustand
+- SCSS
+- TypeScript
+- Vite
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Composants
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Calendar: Affiche le calendrier et permet la sélection des dates
+- ColorPicker: Permet de choisir des couleurs pour les tâches
+- DatePicker: Sélecteur de dates pour les événements
+- DayList: Liste des jours dans le calendrier
+- Events: Gestion et affichage des événements
+- Form: Formulaire pour ajouter ou modifier des événements
+- HeaderDate: En-tête affichant la date sélectionnée
+- Main: Composant principal de l'application
+- TimePicker: Sélecteur d'heure pour les événements
+
+## Hooks personnalisés
+
+- useCalendar: Gère la logique du calendrier
+- useCloseModal: Gère la fermeture des modaux
+- useSelectDay: Gère la sélection des jours dans le calendrier
+
+## Utilitaires
+
+- hexToRGBA: Convertit les couleurs HEX en format RGBA
+- toLocalISOString: Convertit les dates en chaîne de caractères locale
+
+## Configuration
+
+- ESLint pour le linting du code
+- Vite pour la construction et le développement rapide
+
+## Installation et démarrage
+
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
