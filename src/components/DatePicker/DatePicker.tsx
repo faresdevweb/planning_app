@@ -12,13 +12,6 @@ interface DatePickerProps {
 const DatePicker: React.FC<DatePickerProps> = ({ value, onChange }) => {
   const { open, setOpen, ref } = useCloseModal();
 
-  const handleDateChange = (date: Date | null) => {
-    if (date) {
-      onChange(date);
-      setOpen(false);
-    }
-  };
-
   return (
     <div className="container_2" ref={ref}>
       <p className="date" onClick={() => setOpen(!open)}>
@@ -28,7 +21,12 @@ const DatePicker: React.FC<DatePickerProps> = ({ value, onChange }) => {
         <DateCalendar
           className="date_calendar"
           value={value}
-          onChange={handleDateChange}
+          onChange={(date: Date | null) => {
+            if (date) {
+              onChange(date);
+              setOpen(false);
+            }
+          }}
         />
       ) : (
         <></>
